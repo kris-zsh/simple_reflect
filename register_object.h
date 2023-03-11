@@ -5,6 +5,6 @@
 namespace reflect{
     class RegisterObject{
     public:
-        RegisterObject(std::string name, create_object object);
+        RegisterObject(const std::string& name, create_object object);
     };
 }
