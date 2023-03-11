@@ -1,5 +1,6 @@
 #pragma once
 
+
 class Object{
 public:
     Object() = default;
@@ -13,4 +14,9 @@ public:
     ~A();
     void show() override;
 };
-Object* register_object_A();
+
+#define REGISTER_CLASS(object)     \
+      Object* register_object_##object(){                                       \
+        return new object();                                                    \
+      }                                                                         \
+      RegisterObject REGISTER_CLASS##object(#object, register_object_##object); \
