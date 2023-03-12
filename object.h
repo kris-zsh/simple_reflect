@@ -22,10 +22,6 @@ public:
    B(const std::string& name);
    ~B() override = default;
    void show() override;
- private:
    std::string name_;
  };
 
-#define REGISTER_CLASS(object)                                                 \
-  Object *register_object_##object() { return new object(); }                  \
-  RegisterObject REGISTER_CLASS##object(#object, register_object_##object);\
