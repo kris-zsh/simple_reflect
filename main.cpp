@@ -1,30 +1,21 @@
+#include <iostream>
+
+#include "class_field.h"
 #include "object.h"
 #include "register_object.h"
 #include "singleton.h"
-#include <iostream>
-#include "class_field.h"
 
 using namespace std;
 using namespace reflect;
 
-
-
 int main() {
-  auto &factory = Singleton<ClassFactory>::get_instance();
-  Object *obj = factory.create_class("A");
-  obj->show();
-  Object *obj1 = factory.create_class("B");
-  obj1->show();
+    auto &factory = Singleton<ClassFactory>::get_instance();
+    Object *obj = factory.create_class("B");
+    obj->show();
 
-  cout << factory.get_class_field_size("B") << endl;
-  ClassField* classField = factory.get_class_field("B", "name_");
-  cout << classField->name() << endl;
-  cout << classField->type() << endl;
-  cout << classField->offset() << endl;
-  ClassField* classField1 = factory.get_class_field("B", "type_");
-  cout << classField1->name() << endl;
-  cout << classField1->type() << endl;
-  cout << classField1->offset() << endl;
+    std::string name;
+    obj->set("type_", string("1111"));
 
-  // cout << name1 << endl;
+    obj->get("type_", name);
+    cout << name << endl;
 }
