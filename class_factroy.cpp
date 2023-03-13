@@ -46,6 +46,17 @@ ClassField* ClassFactory::get_class_field(const std::string& name, const std::st
     }
     return nullptr;
 }
-size_t ClassFactory::get_field_size() {
-    return class_fields_.size();
+void ClassFactory::register_method(const string& name, ClassMethod* method) {
+    class_methods_[name].push_back(method);
+}
+size_t ClassFactory::get_class_method_size(const string& name) {
+    return class_methods_[name].size();
+}
+ClassMethod* ClassFactory::get_class_method(const string& name, const string& method_name) {
+    auto it = class_methods_.find(name);
+    if (it != class_methods_.end()) {
+        for (auto method: it->second)
+            if (method->name() == method_name) return method;
+    }
+    return nullptr;
 }

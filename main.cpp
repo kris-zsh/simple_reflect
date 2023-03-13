@@ -1,3 +1,4 @@
+#include <functional>
 #include <iostream>
 
 #include "class_field.h"
@@ -9,10 +10,10 @@ using namespace std;
 using namespace reflect;
 
 int main() {
+
     auto &factory = Singleton<ClassFactory>::get_instance();
     Object *obj = factory.create_class("B");
-    obj->show();
-    cout << obj->get_name() << endl;
+    obj->call("show");
 
     std::string name;
     size_t size;

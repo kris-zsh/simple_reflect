@@ -22,6 +22,8 @@ public:
 
     void set(const std::string& field_name, const char* value);
 
+    void call(const std::string& method_name);
+
 private:
     std::string class_name_;
 };
