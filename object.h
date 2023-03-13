@@ -20,7 +20,7 @@ public:
     template<typename T>
     void set(const std::string& field_name, const T& value);
 
-    void set(const std::string& field_name, const std::string& value);
+    void set(const std::string& field_name, const char* value);
 
 private:
     std::string class_name_;
@@ -39,7 +39,6 @@ void Object::set(const std::string& field_name, const T& value) {
     size_t offset = field->offset();
     *(T*) ((size_t) this + offset) = value;
 }
-
 
 class A : public Object {
 public:

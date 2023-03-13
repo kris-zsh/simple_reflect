@@ -42,11 +42,13 @@ std::string Object::get_name() const {
 ClassField *Object::get_field(const string &name) const {
     return Singleton<ClassFactory>::get_instance().get_class_field(class_name_, name);
 }
+
 size_t Object::get_field_size() const {
     return Singleton<ClassFactory>::get_instance().get_class_field_size(class_name_);
 }
-void Object::set(const std::string &field_name, const std::string &value) {
+
+void Object::set(const std::string &field_name, const char* value) {
     ClassField *field = get_field(field_name);
     size_t offset = field->offset();
-    *(std::string *) ((size_t) this + offset) = value;
+    *(string *) ((size_t) this + offset) = value;
 }

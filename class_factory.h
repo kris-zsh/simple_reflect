@@ -20,6 +20,7 @@ namespace reflect {
 
         void register_field(const std::string& name, ClassField* field);
         size_t get_class_field_size(const std::string& name);
+        size_t get_field_size();
         ClassField* get_class_field(const std::string& name, int pos);
         ClassField* get_class_field(const std::string& name, const std::string& field_name);
 

@@ -46,3 +46,6 @@ ClassField* ClassFactory::get_class_field(const std::string& name, const std::st
     }
     return nullptr;
 }
+size_t ClassFactory::get_field_size() {
+    return class_fields_.size();
+}
