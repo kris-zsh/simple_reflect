@@ -15,6 +15,7 @@ REGISTER_CLASS(B)
 
 REFISTER_CLASS_FIELD(B, name_, string)
 REFISTER_CLASS_FIELD(B, type_, string)
+REFISTER_CLASS_FIELD(B, size, size_t)
 
 A::A() {}
 

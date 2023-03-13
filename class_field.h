@@ -13,5 +13,5 @@ public:
 private:
     std::string name_;
     std::string type_;
-    size_t offset_;
+    size_t offset_ = 0;
 };

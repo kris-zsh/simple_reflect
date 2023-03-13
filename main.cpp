@@ -15,17 +15,12 @@ int main() {
     cout << obj->get_name() << endl;
 
     std::string name;
+    size_t size;
     obj->set("type_", "1111");
+    obj->set("size", 100);
 
+    obj->get("size", size);
     obj->get("type_", name);
     cout << name << endl;
-
-    Object *obj1 = factory.create_class("B");
-//    obj1->set("type_", "2222222222");
-    obj1->get("type_", name);
-    cout << name << endl;
-
-    obj->get("type_", name);
-    cout << name << endl;
-
+    cout << size << endl;
 }

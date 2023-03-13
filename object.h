@@ -55,19 +55,5 @@ public:
     void show() override;
     std::string name_;
     std::string type_;
+    size_t size = 0;
 };
-
-//
-//template<typename T>
-//void Object::get(const std::string& field_name, T& value){
-//     ClassField* field = get_field(field_name);
-//     size_t offset = field->offset();
-//     value = *(T *)((size_t)this + offset);
-//}
-//
-//template<typename T>
-//void Object::set(const std::string& field_name, T& value){
-//    ClassField* field = get_field(field_name);
-//    size_t offset = field->offset();
-//    *(T *)((size_t)this + offset) = value;
-//}
