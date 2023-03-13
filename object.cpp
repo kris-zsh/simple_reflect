@@ -6,16 +6,19 @@ using namespace reflect;
 using namespace std;
 
 REGISTER_CLASS(A)
- REGISTER_CLASS(B)
+REGISTER_CLASS(B)
 
-A::A() { cout << " AAAAAA" << endl; }
+REFISTER_CLASS_FIELD(B, name_, string)
+REFISTER_CLASS_FIELD(B, type_, string)
+
+A::A() {}
 
 A::~A() {}
 
 void A::show() { cout << "show A" << endl; }
 
- B::B(const string &name) :name_(name){}
+ B::B(const string &name, const string& type) :name_(name), type_(type){}
 
  void B::show() {
-   cout << "B" <<endl;
+   cout << "show B" <<endl;
  }
